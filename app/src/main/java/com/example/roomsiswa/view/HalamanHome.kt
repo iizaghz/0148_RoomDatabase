@@ -47,6 +47,23 @@ object DestinasiHome : DestinasiNavigasi {
 
 
 @Composable
+fun ListSiswa(
+    itemSiswa: List<Siswa>,
+    modifier: Modifier = Modifier
+) {
+    LazyColumn(modifier = modifier) {
+        items(items = itemSiswa, key = { it.id }) { person ->
+            DataSiswa(
+                siswa = person,
+                modifier = Modifier.padding(
+                    dimensionResource(id = R.dimen.padding_small)
+                )
+            )
+        }
+    }
+}
+
+@Composable
 fun DataSiswa(
     siswa: Siswa,
     modifier: Modifier = Modifier
