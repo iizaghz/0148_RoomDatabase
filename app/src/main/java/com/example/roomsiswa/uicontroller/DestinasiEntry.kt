@@ -1,4 +1,4 @@
-package com.example.roomsiswa.view.uicontroller
+package com.example.roomsiswa.uicontroller
 
 import com.example.roomsiswa.R
 
