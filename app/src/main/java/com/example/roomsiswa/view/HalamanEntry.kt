@@ -25,6 +25,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomsiswa.R
 import com.example.roomsiswa.uicontroller.DestinasiNavigasi
+import com.example.roomsiswa.uicontroller.DestinasiEntry
 import com.example.roomsiswa.uicontroller.SiswaTopAppBar
 import com.example.roomsiswa.viewmodel.DetailSiswa
 import com.example.roomsiswa.viewmodel.EntryViewModel
@@ -32,10 +33,6 @@ import com.example.roomsiswa.viewmodel.PenyediaViewModel
 import com.example.roomsiswa.viewmodel.UIStateSiswa
 import kotlinx.coroutines.launch
 
-object DestinasiEntry : DestinasiNavigasi {
-    override val route = "item_entry"
-    override val titleRes = R.string.entry_siswa
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,7 +48,7 @@ fun EntrySiswaScreen(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             SiswaTopAppBar(
-                title = stringResource(DestinasiEntry.titleRes),
+                tittle = stringResource(DestinasiEntry.titleRes),
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior,
                 navigateUp = navigateBack
@@ -167,10 +164,10 @@ fun FormInputSiswa(
         }
 
         HorizontalDivider(
-            thickness = dimensionResource(id = R.dimen.padding_small),
             modifier = Modifier.padding(
-                bottom = dimensionResource(id = R.dimen.padding_medium)
-            )
+                bottom = dimensionResource(R.dimen.padding_medium)
+            ),
+            thickness = dimensionResource(id = R.dimen.padding_small)
         )
     }
 }
